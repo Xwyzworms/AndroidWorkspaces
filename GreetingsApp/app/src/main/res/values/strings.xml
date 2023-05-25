@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GrettingsApp</string>
+    <string name="name">Please enter your name</string>
+</resources>

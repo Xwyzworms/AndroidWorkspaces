@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/et_yourName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="300dp"
+        android:hint="@string/name"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white_low_opacity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Greetings App"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.168" />
+
+    <Button
+        android:id="@+id/btn_greet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Greet me !"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/et_yourName"
+        app:layout_constraintEnd_toEndOf="@id/et_yourName"
+        app:layout_constraintStart_toStartOf="@id/et_yourName"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
