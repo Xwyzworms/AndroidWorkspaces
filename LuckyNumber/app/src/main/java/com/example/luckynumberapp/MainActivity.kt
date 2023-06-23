@@ -41,6 +41,7 @@ import androidx.compose.ui.unit.sp
 import com.example.luckynumberapp.ui.theme.LuckyNumberAppTheme
 
 class MainActivity : ComponentActivity() {
+    private var bro : String = "da"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -58,6 +59,7 @@ class MainActivity : ComponentActivity() {
     private fun gotoAnotherActivity()
     {
         val intent : Intent = Intent(baseContext, SecondActivity::class.java)
+        intent.putExtra("BRO", bro)
         startActivity(intent)
 
     }
@@ -91,7 +93,10 @@ class MainActivity : ComponentActivity() {
         Column() {
             TextField(
                 value = inputValue.value,
-                onValueChange = { inputValue.value = it },
+                onValueChange = {
+                                inputValue.value = it
+                                bro = it.text
+                                },
                 placeholder = { Text(text="Enter your name")},
                 modifier = Modifier
                     .padding(all = 16.dp)

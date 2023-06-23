@@ -59,11 +59,11 @@ class SecondActivity : ComponentActivity() {
     @Composable
     fun MainContentSecond(userName : String)
     {
-            DefineMainContent()
+            DefineMainContent(userName)
     }
 
     @Composable()
-    fun DefineMainContent(){
+    fun DefineMainContent(userName: String){
 
         Column(
             Modifier
@@ -72,7 +72,7 @@ class SecondActivity : ComponentActivity() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally) {
 
-            Text("Your Lucky Number is ", fontSize = 20.sp)
+            Text("$userName, Your Lucky Number is ", fontSize = 20.sp)
             Text(text=getLuckyNumber(), fontSize = 25.sp)
 
             Button(onClick= {
