@@ -5,5 +5,12 @@
 */
 package com.example.simplemovieapp.data.domain.tvshow
 
-class GetTvShowUseCase {
+import com.example.simplemovieapp.data.models.tvshow.TvShow
+import com.example.simplemovieapp.data.repository.tvshow.TvShowsRepository
+
+class GetTvShowUseCase(private val tvShowsRepository: TvShowsRepository) {
+
+    suspend fun execute() : List<TvShow> {
+        return tvShowsRepository.getTvShows()
+    }
 }
