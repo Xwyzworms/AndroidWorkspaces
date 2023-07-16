@@ -13,12 +13,12 @@ import retrofit2.http.GET
 
 interface MainAPIService {
 
-    @GET
+    @GET("movie/popular")
     suspend fun getMoviesFromApi () : Response<Movies>
 
-    @GET
+    @GET("tv/popular")
     suspend fun getTvShowsFromApi () : Response<TvShows>
 
-    @GET
+    @GET("person/popular")
     suspend fun getArtistsFromApi () : Response<Artists>
 }
