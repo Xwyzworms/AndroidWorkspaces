@@ -20,18 +20,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupOnClickListener() {
-        var intent = Intent()
         binding.btnMovie.setOnClickListener {
-            intent = Intent(this, MovieActivity::class.java);
+            var intent = Intent(this, MovieActivity::class.java);
+            startActivity(intent)
         }
 
         binding.btnTv.setOnClickListener {
-            intent = Intent(this, TvActivity::class.java);
+            var intent = Intent(this, TvActivity::class.java);
         }
 
         binding.btnArtists.setOnClickListener {
-            intent = Intent(this, ArtistsActivity::class.java);
+            var intent = Intent(this, ArtistsActivity::class.java);
         }
-        startActivity(intent)
     }
 }

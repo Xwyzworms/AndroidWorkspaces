@@ -15,8 +15,8 @@ import retrofit2.Response
 import kotlin.Exception
 
 class MoviesRepositoryImpl(
-    private val movieLocalSource: MovieLocalSource,
     private val movieApiSource: MovieApiSource,
+    private val movieLocalSource: MovieLocalSource,
     private val movieCacheSource: MovieCacheSource
 
 ) : MoviesRepository{

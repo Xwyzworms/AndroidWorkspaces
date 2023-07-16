@@ -11,8 +11,8 @@ import com.example.simplemovieapp.data.domain.artist.GetArtistsUseCase
 import com.example.simplemovieapp.data.domain.artist.UpdateArtistsUseCase
 
 class ArtistsViewModelFactory(
+    private val getArtistsUseCase: GetArtistsUseCase,
     private val updateArtistsUseCase: UpdateArtistsUseCase,
-    private val getArtistsUseCase: GetArtistsUseCase
 ) : ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return ArtistsViewModel(getArtistsUseCase, updateArtistsUseCase) as T
