@@ -10,9 +10,9 @@ import com.example.simplemovieapp.data.repository.artist.ArtistsRepository
 
 class UpdateArtistsUseCase(private val artistsRepository: ArtistsRepository)
 {
-    suspend fun execute(artists : List<Artist>)
+    suspend fun execute()
     {
-        artistsRepository.updateArtists(artists)
+        artistsRepository.updateArtists()
     }
 
 }

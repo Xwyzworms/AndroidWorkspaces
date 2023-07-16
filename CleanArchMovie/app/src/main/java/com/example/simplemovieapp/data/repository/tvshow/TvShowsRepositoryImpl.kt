@@ -16,8 +16,8 @@ import retrofit2.Response
 class TvShowsRepositoryImpl(
 
         private val tvShowApiSource: TvShowApiSource,
-        private val  tvShowCacheSource : TvShowCacheSource,
-        private val tvShowLocalSource : TvShowLocalSource
+        private val tvShowLocalSource : TvShowLocalSource,
+        private val  tvShowCacheSource : TvShowCacheSource
                             ) : TvShowsRepository {
     override suspend fun getTvShows(): List<TvShow> {
 

@@ -5,9 +5,10 @@
 */
 package com.example.simplemovieapp.data.domain.tvshow
 
-class UpdateTvShowUseCase {
-    fun execute()
-    {
+import com.example.simplemovieapp.data.repository.tvshow.TvShowsRepository
 
+class UpdateTvShowUseCase(private val tvShowsRepository: TvShowsRepository) {
+    suspend fun execute() {
+        tvShowsRepository.updateTvShows()
     }
 }

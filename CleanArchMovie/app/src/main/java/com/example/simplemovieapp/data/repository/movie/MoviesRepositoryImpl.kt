@@ -15,8 +15,8 @@ import retrofit2.Response
 import kotlin.Exception
 
 class MoviesRepositoryImpl(
-    private val movieLocalSource: MovieLocalSource,
     private val movieApiSource: MovieApiSource,
+    private val movieLocalSource: MovieLocalSource,
     private val movieCacheSource: MovieCacheSource
 
 ) : MoviesRepository{
@@ -29,7 +29,6 @@ class MoviesRepositoryImpl(
         movieLocalSource.updateMoviesDB(newMovies)
         movieCacheSource.updateMoviesCache(newMovies)
     }
-
     private suspend fun getMoviesFromAPI() : List<Movie>
     {
         lateinit var movies : List<Movie>
@@ -49,7 +48,6 @@ class MoviesRepositoryImpl(
         {
             Log.d(this::class.simpleName, "Error ${e.message.toString()}")
         }
-
         return movies
     }
 

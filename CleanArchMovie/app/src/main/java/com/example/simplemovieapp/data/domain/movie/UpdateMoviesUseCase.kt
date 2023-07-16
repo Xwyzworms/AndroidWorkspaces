@@ -9,8 +9,8 @@ import com.example.simplemovieapp.data.models.movie.Movie
 import com.example.simplemovieapp.data.repository.movie.MoviesRepository
 
 class UpdateMoviesUseCase(private val moviesRepository: MoviesRepository) {
-    suspend fun execute(movies : List<Movie>)
+    suspend fun execute()
     {
-        moviesRepository.updateMovies(movies)
+        moviesRepository.updateMovies()
     }
 }
