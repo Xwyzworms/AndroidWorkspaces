@@ -26,12 +26,13 @@ class MoviesRepositoryImpl(
 
     override suspend fun updateMovies() {
         val newMovies : List<Movie> = getMoviesFromAPI()
+        movieLocalSource.clearDB()
         movieLocalSource.updateMoviesDB(newMovies)
         movieCacheSource.updateMoviesCache(newMovies)
     }
     private suspend fun getMoviesFromAPI() : List<Movie>
     {
-        lateinit var movies : List<Movie>
+         var movies : List<Movie> = ArrayList()
         try {
             val movieResponse : Response<Movies> = movieApiSource.getMoviesFromApi()
             val moviesAPI : Movies? = movieResponse.body()

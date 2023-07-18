@@ -26,6 +26,7 @@ class TvShowsRepositoryImpl(
 
     override suspend fun updateTvShows() {
         val newTvShows : List<TvShow> = getTvShowsFromAPI()
+        tvShowLocalSource.clearAll()
         tvShowLocalSource.saveTvShowsToDB(newTvShows)
         tvShowCacheSource.updateTvShowToCache(newTvShows)
     }

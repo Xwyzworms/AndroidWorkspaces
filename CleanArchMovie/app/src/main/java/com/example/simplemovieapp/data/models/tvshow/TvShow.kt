@@ -15,6 +15,6 @@ data class TvShow(
     val name: String?,
     @SerializedName("popularity")
     val popularity: Double?,
-    @SerializedName("profile_path")
+    @SerializedName("poster_path")
     val profilePath: String?
 )

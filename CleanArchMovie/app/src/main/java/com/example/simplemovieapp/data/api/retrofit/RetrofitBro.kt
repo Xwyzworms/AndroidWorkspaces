@@ -50,7 +50,7 @@ object RetrofitBro {
                 return OkHttpClient.Builder().addInterceptor(
                     Interceptor { chain->
                         val originalRequest : Request = chain.request()
-                        val authToken : String = "YOUR API KEY"
+                        val authToken : String = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NmMwNmU4MzkzMTM4ZDM2MjQ1ZjdmZTAzYjA4MmUxOCIsInN1YiI6IjYxYzcwYWVhZDg2MWFmMDBkNGMzZjg3ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IBD9J_eSOJBvXz1BO3JOSC40FweuFaadC_jFzz55TK4"
                         val newAuthenticatedRequest = originalRequest.newBuilder()
                             .addHeader("Authorization", "Bearer $authToken").build()
                         chain.proceed(newAuthenticatedRequest)
