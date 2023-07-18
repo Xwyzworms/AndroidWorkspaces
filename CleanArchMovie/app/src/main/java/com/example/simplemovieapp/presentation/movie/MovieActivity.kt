@@ -3,6 +3,9 @@ package com.example.simplemovieapp.presentation.movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,11 +25,11 @@ class MovieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_movie)
+        setSupportActionBar(binding.myToolbar)
         (application as Injector).createMovieSubComponent().inject(this)
         movieViewModel = ViewModelProvider(this, factory).get(MovieViewModel::class.java)
         setupRecyclerView()
     }
-
 
     private fun setupRecyclerView()
     {
@@ -39,4 +42,24 @@ class MovieActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val layoutInflater : MenuInflater = menuInflater
+        layoutInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        lateinit var adapter: MovieRecyclerViewAdapter
+        return when(item.itemId) {
+                R.id.update_data -> {
+                    movieViewModel.updateMovies().observe(this) {movies->
+                        adapter = MovieRecyclerViewAdapter(movies)
+                        binding.movieRecyclerView.adapter = adapter
+                    }
+                    true
+                }
+            else->
+                return super.onOptionsItemSelected(item)
+        }
+    }
 }

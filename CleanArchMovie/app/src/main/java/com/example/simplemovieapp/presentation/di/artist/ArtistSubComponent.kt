@@ -15,10 +15,12 @@ import dagger.Provides
 import dagger.Subcomponent
 
 
+@ArtistScope
 @Subcomponent(modules = [ArtistModule::class])
 interface ArtistSubComponent {
 
-    fun inject(tvActivity: ArtistsActivity)
+
+    fun inject(artistActivity: ArtistsActivity)
 
     @Subcomponent.Factory
     interface Factory {

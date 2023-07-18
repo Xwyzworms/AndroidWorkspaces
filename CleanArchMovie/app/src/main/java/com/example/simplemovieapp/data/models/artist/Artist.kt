@@ -21,6 +21,6 @@ data class Artist(
     val overview: String?,
     @SerializedName("popularity")
     val popularity: Double?,
-    @SerializedName("poster_path")
+    @SerializedName("profile_path")
     val posterPath: String?,
 )

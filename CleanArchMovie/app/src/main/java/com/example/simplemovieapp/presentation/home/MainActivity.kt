@@ -27,10 +27,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnTv.setOnClickListener {
             var intent = Intent(this, TvActivity::class.java);
+            startActivity(intent)
         }
 
         binding.btnArtists.setOnClickListener {
             var intent = Intent(this, ArtistsActivity::class.java);
+            startActivity(intent)
         }
     }
 }

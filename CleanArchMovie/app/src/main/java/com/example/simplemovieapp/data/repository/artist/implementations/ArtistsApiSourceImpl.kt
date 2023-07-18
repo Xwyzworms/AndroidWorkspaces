@@ -6,7 +6,6 @@
 package com.example.simplemovieapp.data.repository.artist.implementations
 
 import com.example.simplemovieapp.data.api.MainAPIService
-import com.example.simplemovieapp.data.models.artist.Artist
 import com.example.simplemovieapp.data.models.artist.Artists
 import com.example.simplemovieapp.data.repository.artist.abstracts.ArtistsApiSource
 import retrofit2.Response

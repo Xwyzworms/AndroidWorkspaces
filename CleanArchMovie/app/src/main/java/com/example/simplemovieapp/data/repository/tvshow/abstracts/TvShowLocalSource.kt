@@ -5,7 +5,6 @@
 */
 package com.example.simplemovieapp.data.repository.tvshow.abstracts
 
-import com.example.simplemovieapp.data.models.movie.Movie
 import com.example.simplemovieapp.data.models.tvshow.TvShow
 
 interface TvShowLocalSource {

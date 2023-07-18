@@ -27,6 +27,7 @@ class ArtistsRepositoryImpl(
     override suspend fun updateArtists()
     {
         val newArtists : List<Artist> = getArtistsFromApi()
+        artistsLocalSource.clearAll()
         artistsLocalSource.updateArtistsDB(newArtists)
         artistsCacheSource.updateArtistsCache(newArtists)
     }
