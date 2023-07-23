@@ -30,6 +30,7 @@ buildscript {
     ext.hilt_version = '2.36'
     ext.hilt_jetpack_version = '1.0.0-alpha03'
 
+    ext.nav_version = "2.6.0"
 }
 plugins {
     id 'com.android.application' version '8.0.2' apply false
